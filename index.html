@@ -42,24 +42,29 @@
     display: inline-block;
     z-index: 9999;
 }
-
 .menu-button {
     list-style: none;
     cursor: pointer;
-    width: 32px;
-    height: 32px;
-    border-radius: 25%;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
     background: #fbe5f0;
     color: #651477;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 32px;
+    font-size: 25px;
+    line-height: 1;
+    border: none;
+    box-shadow: 0 3px 10px #65147715;
+    transition: 0.2s ease;
 }
 
-.menu-button::-webkit-details-marker {
-    display: none;
+.menu-button:active {
+    transform: scale(0.92);
+    background: #f3d5e6;
 }
+
 
 .menu-panel {
     position: absolute;
