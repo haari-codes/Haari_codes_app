@@ -507,5 +507,31 @@ body {
     stroke-linejoin: round;
 }
 
+.feature-icon {
+    display: flex !important;
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    font-size: 39px;
+    color: #58136e;
+    background: transparent;
+}
+
+.icon-dsa,
+.icon-practice {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.icon-dsa {
+    font-size: 42px;
+}
+
+.icon-practice {
+    font-size: 39px;
+}
+
    
 }
