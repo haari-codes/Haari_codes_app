@@ -431,4 +431,42 @@ body {
     .feature-card strong {
         font-size: 12px;
     }
+
+   
+/* Haari portrait area */
+.hero {
+    background: linear-gradient(135deg, #fff0f5, #f8e1f4);
+}
+
+.haari-image {
+    overflow: hidden;
+    background: transparent;
+}
+
+.haari-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 0;
+    display: block;
+}
+
+/* Feature card icon styling */
+.feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #651477;
+    font-size: 30px;
+}
+
+/* Keep existing layout dimensions */
+.feature-grid,
+.feature-card,
+.course-card,
+.bottom-nav {
+    box-sizing: border-box;
+}
+
 }
