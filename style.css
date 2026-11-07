@@ -479,5 +479,33 @@ body {
     stroke-linejoin: round;
 }
 
+.feature-card .feature-icon {
+    display: flex !important;
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    visibility: visible !important;
+}
+
+.feature-card .feature-icon svg {
+    display: block !important;
+    width: 46px !important;
+    height: 46px !important;
+    overflow: visible;
+    opacity: 1;
+}
+
+.feature-card .feature-icon svg path,
+.feature-card .feature-icon svg rect,
+.feature-card .feature-icon svg circle {
+    fill: none;
+    stroke: #58136e;
+    stroke-width: 2.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
    
 }
