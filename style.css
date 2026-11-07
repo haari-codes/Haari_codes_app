@@ -49,6 +49,8 @@ body {
     font-family: Georgia, serif;
     font-style: italic;
     color: var(--dark-purple);
+   position: relative;
+    left: -35px;
 }
 
 .brand p {
