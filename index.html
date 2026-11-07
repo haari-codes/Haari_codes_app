@@ -3,49 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haari_Codes</title>
+    <meta name="theme-color" content="#fff0f5">
+    <title>Haari_Codes | Learn • Practice • Build</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header>
-    <h1>👩‍💻 Haari_Codes</h1>
-    <p>Learn • Practice • Build</p>
-</header>
+    <!-- HEADER -->
+    <header class="top-header">
+        <button class="icon-button" onclick="openSection('Menu')">☰</button>
 
-<main class="container">
-    <section class="welcome">
-        <h2>Hey, Welcome! 💗</h2>
-        <p>Your learning journey starts here.</p>
-    </section>
-
-    <section class="cards">
-        <div class="card" onclick="openSection('Learn')">
-            <h3>📚 Learn</h3>
-            <p>Explore programming courses</p>
+        <div class="brand">
+            <h1>👑 Haari_Codes</h1>
+            <p>Learn • Practice • Build ♡</p>
         </div>
 
-        <div class="card" onclick="openSection('DSA Visualizer')">
-            <h3>🔗 DSA Visualizer</h3>
-            <p>Understand data structures</p>
-        </div>
+        <button class="icon-button" onclick="openSection('Notifications')">♧</button>
+    </header>
 
-        <div class="card" onclick="openSection('Practice')">
-            <h3>✍️ Practice</h3>
-            <p>Test your knowledge</p>
-        </div>
+    <main>
 
-        <div class="card" onclick="openSection('Haari AI')">
-            <h3>🤖 Haari AI</h3>
-            <p>Your learning companion</p>
-        </div>
-    </section>
-</main>
+        <!-- HAARI INTRODUCTION -->
+        <section class="hero">
 
-<footer>
-    Made with 💗 by Haari_Codes
-</footer>
+            <div class="haari-image">
+                <img src="haari.png" alt="Haari AI Companion">
+            </div>
 
-<script src="script.js"></script>
+            <div class="speech-bubble">
+                <p>Hey there! 👋</p>
+                <h2>I'm Haari!</h2>
+                <p>Your AI learning companion. Let's learn something new today! ♡</p>
+            </div>
+
+        </section>
+
+        <!-- SEARCH -->
+        <section class="search-section">
+            <div class="search-box">
+                <span>⌕</span>
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search courses, topics or tools..."
+                >
+                <button onclick="searchContent()">⚙</button>
+            </div>
+        </section>
+
+        <!-- MAIN FEATURES -->
+        <section class="feature-grid">
+
+            <button class="feature-card" onclick="openSection('Learn')">
+                <span class="feature-icon">📖</span>
+                <span>
+                    <strong>Learn</strong>
+                    <small>Explore concepts</small>
+                </span>
+                <b>›</b>
+            </button>
+
+            <button class="feature-card" onclick="openSection('DSA Visualizer')">
+                <span class="feature-icon">🌳</span>
+                <span>
+                    <strong>DSA Visualizer</strong>
+                    <small>See it in action</small>
+                </span>
+                <b>›</b>
+            </button>
+
+            <button class="feature-card" onclick="openSection('Practice')">
+                <span class="feature-icon">📋</span>
+                <span>
+                    <strong>Practice</strong>
+                    <small>Test your skills</small>
+                </span>
+                <b>›</b>
+            </button>
+
+            <button class="feature-card" onclick="openSection('Haari AI')">
+                <span class="feature-icon">🤖</span>
+                <span>
+                    <strong>Haari AI</strong>
+                    <small>Ask anything</small>
+                </span>
+                <b>›</b>
+            </button>
+
+        </section>
+
+        <!-- CONTINUE LEARNING -->
+        <section class="continue-section">
+
+            <div class="section-heading">
+                <h2>Continue Learning</h2>
+                <button onclick="openSection('All Courses')">
+                    View All →
+                </button>
+            </div>
+
+            <div class="course-card">
+
+                <div class="course-thumbnail">
+                    &lt;/&gt;
+                </div>
+
+                <div class="course-info">
+                    <h3>C Programming</h3>
+                    <p>Variables & Data Types</p>
+
+                    <div class="progress-track">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+
+                <div class="course-progress">
+                    <button onclick="openSection('C Programming')">▶</button>
+                    <span>60%</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- QUOTE -->
+        <section class="quote-banner">
+            <p>“Dream it. Code it. Achieve it.” ♡</p>
+            <span>— Haari_Codes</span>
+        </section>
+
+    </main>
+
+    <!-- BOTTOM NAVIGATION -->
+    <nav class="bottom-nav">
+
+        <button class="nav-item active" onclick="openSection('Home')">
+            <span>⌂</span>
+            <small>Home</small>
+        </button>
+
+        <button class="nav-item" onclick="openSection('Courses')">
+            <span>▤</span>
+            <small>Courses</small>
+        </button>
+
+        <button class="nav-item" onclick="openSection('Progress')">
+            <span>▥</span>
+            <small>Progress</small>
+        </button>
+
+        <button class="nav-item" onclick="openSection('Profile')">
+            <span>♙</span>
+            <small>Profile</small>
+        </button>
+
+    </nav>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
