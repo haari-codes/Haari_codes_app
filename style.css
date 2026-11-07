@@ -625,5 +625,22 @@ body {
     font-size: 12px;
     margin-top: 30px;
 }
-   
+   /* Fix menu position without disturbing logo */
+.header {
+    position: relative;
+}
+
+.haari-menu {
+    position: absolute;
+    left: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9999;
+}
+
+.menu-button {
+    width: 65px;
+    height: 65px;
+    font-size: 35px;
+}
 }
