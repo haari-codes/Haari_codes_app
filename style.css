@@ -651,5 +651,17 @@ body {
     border-radius: 25%;
     box-sizing: border-box;
    }
+   /* Move Haari_Codes title towards the left */
+.header h1 {
+    position: relative;
+    left: -35px;
 }
+
+/* Keep tagline aligned with title */
+.header p {
+    position: relative;
+    left: -35px;
+                          }
+}
+
 
