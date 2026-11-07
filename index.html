@@ -12,7 +12,12 @@
 
     <!-- HEADER -->
     <header class="top-header">
-        <button class="icon-button" onclick="openSection('Menu')">☰</button>
+        <button class="icon-button" id="menuToggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="sideMenu">
+    ☰
+        </button>
 
         <div class="brand">
             <h1>👑 Haari_Codes</h1>
@@ -21,6 +26,32 @@
 
         <button class="icon-button" onclick="openSection('Notifications')">♧</button>
     </header>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<aside class="side-menu" id="sideMenu">
+    <div class="menu-heading">
+        <h2>Haari_Codes 💜</h2>
+        <button id="menuClose" aria-label="Close menu">✕</button>
+    </div>
+
+    <p class="menu-subtitle">Learn • Practice • Build</p>
+
+    <nav class="menu-links">
+        <a href="index.html">🏠 Home</a>
+        <a href="learn.html">📚 Learn</a>
+        <a href="#" onclick="openSection('DSA Visualizer'); return false;">🌳 DSA Visualizer</a>
+        <a href="#" onclick="openSection('Practice'); return false;">📝 Practice</a>
+        <a href="#" onclick="openSection('Haari AI'); return false;">🤖 Haari AI</a>
+        <a href="#" onclick="openSection('Progress'); return false;">📊 Progress</a>
+        <a href="#" onclick="openSection('Profile'); return false;">👤 Profile</a>
+        <a href="#" onclick="openSection('About'); return false;">💗 About Us</a>
+    </nav>
+
+    <div class="menu-footer">
+        Made with ♡ by Haari_Codes
+    </div>
+</aside>
 
     <main>
 
