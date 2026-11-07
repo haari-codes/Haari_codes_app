@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff0f5">
+<title>Learn | Haari_Codes</title>
+
+<style>
+:root {
+    --pink: #f9dce8;
+    --light: #fff7f7;
+    --purple: #651477;
+    --dark: #351039;
+    --muted: #795d79;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    padding-bottom: 30px;
+}
+
+header {
+    background: linear-gradient(120deg, #f9dce8, #fceefa);
+    padding: 22px 16px;
+    text-align: center;
+}
+
+header a {
+    display: block;
+    text-align: left;
+    color: var(--purple);
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+header h1 {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 27px;
+}
+
+header p {
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+main {
+    padding: 20px 16px;
+}
+
+.welcome {
+    background: #f9e5ef;
+    padding: 22px;
+    border-radius: 22px;
+    margin-bottom: 22px;
+}
+
+.welcome h2 {
+    font-family: Georgia, serif;
+    color: var(--purple);
+    margin-bottom: 9px;
+}
+
+.welcome p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.search-box {
+    display: flex;
+    background: white;
+    border: 2px solid #efc8d9;
+    border-radius: 30px;
+    padding: 13px 16px;
+    margin-bottom: 22px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    background: transparent;
+    color: var(--dark);
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.heading h2 {
+    font-size: 20px;
+    border-left: 5px solid #b34ac0;
+    padding-left: 10px;
+}
+
+.heading span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.course-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.course-card {
+    background: linear-gradient(140deg, #ffeaf2, #f8d5e5);
+    border: 1px solid #edbfd4;
+    border-radius: 20px;
+    padding: 16px 12px;
+    min-height: 165px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0 4px 10px #65147710;
+}
+
+.course-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
+    background: white;
+    display: grid;
+    place-items: center;
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.course-card h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.course-card p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 13px;
+}
+
+.course-card button {
+    border: none;
+    background: var(--purple);
+    color: white;
+    border-radius: 20px;
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: auto;
+    cursor: pointer;
+}
+
+.course-card button:active {
+    transform: scale(.96);
+}
+
+.empty {
+    display: none;
+    text-align: center;
+    padding: 25px;
+    color: var(--muted);
+}
+
+footer {
+    text-align: center;
+    color: var(--muted);
+    font-family: Georgia, serif;
+    font-style: italic;
+    padding: 25px 10px;
+}
+
+@media (max-width: 340px) {
+    .course-list {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="index.html">← Back to Home</a>
+    <h1>📚 Learn with Haari</h1>
+    <p>Learn • Understand • Grow ♡</p>
+</header>
+
+<main>
+
+    <section class="welcome">
+        <h2>Let's Start Learning! 💗</h2>
+        <p>
+            Every expert was once a beginner.
+            Choose a course and begin your coding journey
+            with Haari_Codes!
+        </p>
+    </section>
+
+    <div class="search-box">
+        <input
+            type="search"
+            id="courseSearch"
+            placeholder="Search your courses..."
+            oninput="filterCourses()"
+        >
+    </div>
+
+    <div class="heading">
+        <h2>Explore Courses</h2>
+        <span id="courseCount">5 Courses</span>
+    </div>
+
+    <section class="course-list" id="courseList">
+
+        <article class="course-card" data-name="c programming">
+            <div class="course-icon">💻</div>
+            <h3>C Programming</h3>
+            <p>Learn the fundamentals of programming with C.</p>
+            <button onclick="courseMessage('C Programming')">
+                Explore →
+            </button>
+        </article>
+
+        <article class="course-card" data-name="c++ cpp programming">
+            <div class="course-icon">⚙️</div>
+            <h3>C++ Programming</h3>
+            <p>Understand object-oriented programming.</p>
+            <button onclick="courseMessage('C++ Programming')">
+                Explore →
+            </button>
+        </article>
+
+        <article class="course-card" data-name="html web development">
+            <div class="course-icon">🌐</div>
+            <h3>HTML</h3>
+            <p>Build the structure of beautiful websites.</p>
+            <button onclick="courseMessage('HTML')">
+                Explore →
+            </button>
+        </article>
+
+        <article class="course-card" data-name="sql database">
+            <div class="course-icon">🗄️</div>
+            <h3>SQL</h3>
+            <p>Learn database concepts and queries.</p>
+            <button onclick="courseMessage('SQL')">
+                Explore →
+            </button>
+        </article>
+
+        <article class="course-card" data-name="data structures ds">
+            <div class="course-icon">🌳</div>
+            <h3>Data Structures</h3>
+            <p>Understand arrays, stacks, queues and more.</p>
+            <button onclick="courseMessage('Data Structures')">
+                Explore →
+            </button>
+        </article>
+
+    </section>
+
+    <div class="empty" id="emptyMessage">
+        No courses found. Try another search! 💗
+    </div>
+
+</main>
+
+<footer>
+    Made with 💗 by Haari_Codes
+</footer>
+
+<script>
+function filterCourses() {
+    const search = document
+        .getElementById("courseSearch")
+        .value.toLowerCase().trim();
+
+    const cards = document.querySelectorAll(".course-card");
+    let visible = 0;
+
+    cards.forEach(card => {
+        const name = card.dataset.name.toLowerCase();
+        const show = name.includes(search);
+
+        card.style.display = show ? "flex" : "none";
+
+        if (show) visible++;
+    });
+
+    document.getElementById("courseCount").textContent =
+        visible + (visible === 1 ? " Course" : " Courses");
+
+    document.getElementById("emptyMessage").style.display =
+        visible === 0 ? "block" : "none";
+}
+
+function courseMessage(course) {
+    alert(
+        course +
+        " lessons are coming soon! 💜"
+    );
+}
+</script>
+
+</body>
+</html>
