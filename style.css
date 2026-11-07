@@ -1,75 +1,434 @@
+
+/* =================================
+   HAARI_CODES - HOME SCREEN
+   Theme: Cream, Blush Pink, Purple
+================================= */
+
+:root {
+    --cream: #fff8f7;
+    --pink: #f9dce8;
+    --light-pink: #fdeaf1;
+    --deep-pink: #e99ab9;
+    --purple: #651477;
+    --dark-purple: #351039;
+    --text: #321632;
+    --muted: #795d79;
+    --white: #ffffff;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 body {
-    background: #fffaf7;
-    color: #292329;
+    font-family: Arial, sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    padding-bottom: 100px;
 }
 
-header {
-    background: #f6dce4;
-    padding: 20px;
+/* HEADER */
+
+.top-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 17px;
+    background: linear-gradient(120deg, #f9dce8, #fff0f5);
+}
+
+.brand {
     text-align: center;
+    flex: 1;
 }
 
-header h1 {
-    color: #563b52;
+.brand h1 {
+    font-size: 25px;
+    font-family: Georgia, serif;
+    font-style: italic;
+    color: var(--dark-purple);
+}
+
+.brand p {
+    font-size: 13px;
+    margin-top: 5px;
+    color: var(--purple);
+    font-weight: bold;
+}
+
+.icon-button {
+    border: none;
+    background: #fce5ee;
+    color: var(--purple);
+    border-radius: 50%;
+    width: 43px;
+    height: 43px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* HERO SECTION */
+
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 15px 12px 5px;
+    background: linear-gradient(135deg, #fff0f5, #f8e1f4);
+    overflow: hidden;
+    min-height: 260px;
+}
+
+.haari-image {
+    width: 55%;
+    align-self: stretch;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.haari-image img {
+    width: 100%;
+    max-height: 280px;
+    object-fit: contain;
+    object-position: bottom center;
+    display: block;
+    border-radius: 18px 18px 0 0;
+}
+
+.speech-bubble {
+    width: 45%;
+    background: #f9dff0;
+    border: 2px solid #e9b8da;
+    border-radius: 35px 35px 35px 8px;
+    padding: 16px 12px;
+    box-shadow: 0 4px 12px #6b287b12;
+}
+
+.speech-bubble p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text);
+}
+
+.speech-bubble h2 {
+    font-size: 20px;
+    color: var(--purple);
+    margin: 5px 0;
+}
+
+/* SEARCH */
+
+.search-section {
+    padding: 15px 18px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    border: 2px solid #efc8d9;
+    border-radius: 40px;
+    padding: 12px 17px;
+    box-shadow: 0 3px 8px #5c164b10;
+}
+
+.search-box span {
+    font-size: 25px;
+    color: var(--purple);
+}
+
+.search-box input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    font-size: 13px;
+    background: transparent;
+    color: var(--text);
+}
+
+.search-box button {
+    border: none;
+    background: transparent;
+    font-size: 21px;
+    color: var(--purple);
+    cursor: pointer;
+}
+
+/* FEATURE CARDS */
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 8px 16px 20px;
+}
+
+.feature-card {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    text-align: left;
+    min-height: 105px;
+    padding: 12px 10px;
+    border: 1px solid #efbed4;
+    border-radius: 23px;
+    background: linear-gradient(135deg, #ffe9f1, #f9d3e5);
+    color: var(--text);
+    box-shadow: 0 4px 10px #701d6410;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.feature-card:active {
+    transform: scale(0.97);
+}
+
+.feature-icon {
+    font-size: 30px;
+}
+
+.feature-card span:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.feature-card strong {
+    font-size: 14px;
+    color: var(--dark-purple);
+}
+
+.feature-card small {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+.feature-card b {
+    margin-left: auto;
+    font-size: 24px;
+    color: var(--purple);
+}
+
+/* CONTINUE LEARNING */
+
+.continue-section {
+    padding: 10px 17px 20px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    gap: 5px;
+}
+
+.section-heading h2 {
+    font-size: 19px;
+    color: var(--dark-purple);
+    border-left: 5px solid #b34ac0;
+    padding-left: 10px;
+}
+
+.section-heading button {
+    background: none;
+    border: none;
+    color: var(--purple);
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.course-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px;
+    background: white;
+    border: 2px solid #f0d2e0;
+    border-radius: 23px;
+    box-shadow: 0 4px 12px #5a174b10;
+}
+
+.course-thumbnail {
+    width: 28%;
+    min-height: 95px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 17px;
+    background: linear-gradient(135deg, #4a176b, #9d45a8);
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.course-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.course-info h3 {
+    font-size: 15px;
+    color: var(--dark-purple);
+    margin-bottom: 7px;
+}
+
+.course-info p {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 13px;
+}
+
+.progress-track {
+    height: 8px;
+    background: #f4dce8;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, #b33ac2, #72128a);
+    border-radius: 20px;
+}
+
+.course-progress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.course-progress button {
+    border: none;
+    background: #f8d7e8;
+    color: var(--purple);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.course-progress span {
+    font-size: 12px;
+    color: var(--purple);
+    background: #fce5ef;
+    border-radius: 20px;
+    padding: 5px 9px;
+}
+
+/* QUOTE */
+
+.quote-banner {
+    margin: 5px 16px 22px;
+    padding: 22px 12px;
+    text-align: center;
+    background: linear-gradient(120deg, #f8d7e6, #f2d7f4);
+    border-radius: 23px;
+    color: var(--dark-purple);
+}
+
+.quote-banner p {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.quote-banner span {
+    display: block;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+/* BOTTOM NAVIGATION */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #fff5f8;
+    border: 1px solid #f0c9dd;
+    border-radius: 24px 24px 0 0;
+    padding: 12px 5px 15px;
+    box-shadow: 0 -4px 15px #4b174b12;
+    z-index: 100;
+}
+
+.nav-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    background: transparent;
+    color: #795c79;
+    cursor: pointer;
+}
+
+.nav-item span {
     font-size: 26px;
 }
 
-header p {
-    margin-top: 6px;
-    color: #6d5968;
+.nav-item small {
+    font-size: 12px;
 }
 
-.container {
-    padding: 20px;
+.nav-item.active {
+    color: var(--purple);
+    font-weight: bold;
 }
 
-.welcome {
-    background: #fce9ef;
-    padding: 25px;
-    border-radius: 18px;
-    margin-bottom: 20px;
-}
+/* SMALL SCREENS */
 
-.welcome h2 {
-    color: #563b52;
-    margin-bottom: 10px;
-}
+@media (max-width: 360px) {
+    .brand h1 {
+        font-size: 21px;
+    }
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-}
+    .hero {
+        min-height: 225px;
+    }
 
-.card {
-    background: white;
-    border: 1px solid #f1dce4;
-    border-radius: 15px;
-    padding: 22px 12px;
-    text-align: center;
-    box-shadow: 0 3px 10px #00000008;
-}
+    .haari-image img {
+        max-height: 240px;
+    }
 
-.card h3 {
-    color: #754c70;
-    margin-bottom: 8px;
-}
+    .speech-bubble {
+        padding: 11px 9px;
+    }
 
-.card p {
-    font-size: 13px;
-    color: #746b72;
-}
+    .speech-bubble h2 {
+        font-size: 17px;
+    }
 
-footer {
-    text-align: center;
-    padding: 25px;
-    color: #8a7785;
-    font-size: 13px;
+    .speech-bubble p {
+        font-size: 11px;
+    }
+
+    .feature-card {
+        gap: 6px;
+        padding: 9px 7px;
+    }
+
+    .feature-icon {
+        font-size: 24px;
+    }
+
+    .feature-card strong {
+        font-size: 12px;
+    }
 }
