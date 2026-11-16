@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practice | Haari_Codes</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #fff7f8;
+    color: #351039;
+}
+
+header {
+    background: linear-gradient(120deg, #f9dce9, #fdebf3);
+    padding: 24px 18px;
+    text-align: center;
+}
+
+.back {
+    display: block;
+    text-align: left;
+    color: #651477;
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+header h1 {
+    color: #651477;
+    font-size: 27px;
+}
+
+header p {
+    margin-top: 9px;
+    font-size: 13px;
+    color: #795d79;
+}
+
+.intro {
+    margin: 20px 16px;
+    padding: 20px;
+    background: #f8e4ef;
+    border-radius: 18px;
+}
+
+.intro h2 {
+    color: #651477;
+    font-size: 20px;
+    margin-bottom: 9px;
+}
+
+.intro p {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.section-title {
+    margin: 25px 17px 15px;
+    color: #651477;
+    font-size: 18px;
+}
+
+.practice-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+    padding: 0 14px;
+}
+
+.practice-card {
+    background: linear-gradient(135deg, #fce8f1, #f7d9e8);
+    border: 1px solid #edc7db;
+    border-radius: 19px;
+    padding: 17px 13px;
+    min-height: 175px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-icon {
+    width: 43px;
+    height: 43px;
+    background: white;
+    border-radius: 13px;
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+    margin-bottom: 13px;
+}
+
+.practice-card h3 {
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+.practice-card p {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #795d79;
+    flex-grow: 1;
+}
+
+.practice-card button {
+    margin-top: 13px;
+    padding: 9px 13px;
+    width: fit-content;
+    border: none;
+    border-radius: 20px;
+    background: #651477;
+    color: white;
+    font-family: inherit;
+    font-size: 12px;
+}
+
+.info {
+    margin: 25px 16px;
+    padding: 18px;
+    border-radius: 16px;
+    background: white;
+    border: 1px solid #edc7db;
+}
+
+.info h3 {
+    color: #651477;
+    margin-bottom: 8px;
+}
+
+.info p {
+    color: #795d79;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 10px;
+    color: #927b91;
+    font-size: 13px;
+}
+
+@media(max-width:350px) {
+    .practice-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="index.html" class="back">← Back to Home</a>
+    <h1>📝 Practice Zone</h1>
+    <p>Learn • Practice • Improve ♡</p>
+</header>
+
+<section class="intro">
+    <h2>Ready to Challenge Yourself? 💜</h2>
+    <p>
+        Practice your programming skills, improve your
+        problem-solving ability and track your learning journey.
+    </p>
+</section>
+
+<h2 class="section-title">Choose Your Practice</h2>
+
+<section class="practice-grid">
+
+    <div class="practice-card">
+        <div class="card-icon">📝</div>
+        <h3>MCQ Practice</h3>
+        <p>Test your knowledge with multiple-choice questions.</p>
+        <button onclick="comingSoon('MCQ Practice')">Explore →</button>
+    </div>
+
+    <div class="practice-card">
+        <div class="card-icon">💻</div>
+        <h3>Coding Challenges</h3>
+        <p>Improve your coding and logical thinking skills.</p>
+        <button onclick="comingSoon('Coding Challenges')">Explore →</button>
+    </div>
+
+    <div class="practice-card">
+        <div class="card-icon">📚</div>
+        <h3>Topic-wise Practice</h3>
+        <p>Practice questions from individual subjects and topics.</p>
+        <button onclick="comingSoon('Topic-wise Practice')">Explore →</button>
+    </div>
+
+    <div class="practice-card">
+        <div class="card-icon">📊</div>
+        <h3>My Attempts</h3>
+        <p>Review your previous practice sessions and scores.</p>
+        <button onclick="comingSoon('My Attempts')">Explore →</button>
+    </div>
+
+</section>
+
+<section class="info">
+    <h3>🎯 Choose Your Difficulty</h3>
+    <p>
+        🟢 Easy &nbsp; | &nbsp;
+        🟡 Medium &nbsp; | &nbsp;
+        🔴 Hard
+    </p>
+</section>
+
+<footer>
+    Made with 💗 by Haari_Codes
+</footer>
+
+<script>
+function comingSoon(name) {
+    alert(name + " section is coming soon! 💜");
+}
+</script>
+
+</body>
+</html>
