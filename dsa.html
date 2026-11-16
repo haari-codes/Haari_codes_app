@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSA Visualizer | Haari_Codes</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #fff7f8;
+    color: #351039;
+}
+
+header {
+    background: linear-gradient(120deg, #f9dce9, #fdebf3);
+    padding: 25px 18px;
+    text-align: center;
+}
+
+.back {
+    display: block;
+    text-align: left;
+    color: #651477;
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+header h1 {
+    color: #651477;
+    font-size: 27px;
+}
+
+header p {
+    margin-top: 9px;
+    font-size: 13px;
+    color: #795d79;
+}
+
+.intro {
+    margin: 20px 16px;
+    padding: 20px;
+    background: #f8e4ef;
+    border-radius: 18px;
+}
+
+.intro h2 {
+    color: #651477;
+    font-size: 20px;
+    margin-bottom: 9px;
+}
+
+.intro p {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.search-box {
+    margin: 20px 16px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 14px 17px;
+    border: 1px solid #e8bfd5;
+    border-radius: 30px;
+    background: white;
+    font-size: 14px;
+    outline: none;
+}
+
+.section-heading {
+    margin: 25px 17px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-heading h2 {
+    font-size: 18px;
+    color: #651477;
+}
+
+.section-heading span {
+    font-size: 11px;
+    color: #795d79;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+    padding: 0 14px;
+}
+
+.card {
+    background: linear-gradient(135deg, #fce8f1, #f7d9e8);
+    border: 1px solid #edc7db;
+    border-radius: 19px;
+    padding: 17px 13px;
+    min-height: 175px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px #6514770d;
+}
+
+.card-icon {
+    width: 43px;
+    height: 43px;
+    background: white;
+    border-radius: 13px;
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+    margin-bottom: 13px;
+}
+
+.card h3 {
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+.card p {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #795d79;
+    flex-grow: 1;
+}
+
+.card button {
+    margin-top: 13px;
+    padding: 9px 13px;
+    width: fit-content;
+    border: none;
+    border-radius: 20px;
+    background: #651477;
+    color: white;
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.card button:active {
+    transform: scale(.96);
+}
+
+.empty {
+    display: none;
+    text-align: center;
+    padding: 30px;
+    color: #795d79;
+    grid-column: 1 / -1;
+}
+
+footer {
+    text-align: center;
+    padding: 35px 10px;
+    color: #927b91;
+    font-size: 13px;
+}
+
+@media (max-width: 350px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="index.html" class="back">← Back to Home</a>
+    <h1>🌳 DSA Visualizer</h1>
+    <p>Learn • Visualize • Understand ♡</p>
+</header>
+
+<section class="intro">
+    <h2>Explore Data Structures! 💜</h2>
+    <p>
+        Understand complex concepts through visual learning.
+        Choose a topic and explore how algorithms work.
+    </p>
+</section>
+
+<div class="search-box">
+    <input
+        type="search"
+        id="searchInput"
+        placeholder="Search data structures..."
+        oninput="searchTopics()"
+    >
+</div>
+
+<div class="section-heading">
+    <h2>Explore Topics</h2>
+    <span id="topicCount">7 Topics</span>
+</div>
+
+<section class="grid" id="topicGrid">
+
+    <article class="card" data-name="stack">
+        <div class="card-icon">📚</div>
+        <h3>Stack</h3>
+        <p>Understand LIFO operations, Push and Pop.</p>
+        <button onclick="comingSoon('Stack')">Explore →</button>
+    </article>
+
+    <article class="card" data-name="queue">
+        <div class="card-icon">🚶</div>
+        <h3>Queue</h3>
+        <p>Learn FIFO, Enqueue and Dequeue.</p>
+        <button onclick="comingSoon('Queue')">Explore →</button>
+    </article>
+
+    <article class="card" data-name="linked list">
+        <div class="card-icon">🔗</div>
+        <h3>Linked List</h3>
+        <p>Explore nodes, links and list operations.</p>
+        <button onclick="comingSoon('Linked List')">Explore →</button>
+    </article>
+
+    <article class="card" data-name="searching">
+        <div class="card-icon">🔍</div>
+        <h3>Searching</h3>
+        <p>Understand Linear and Binary Search.</p>
+        <button onclick="comingSoon('Searching')">Explore →</button>
+    </article>
+
+    <article class="card" data-name="sorting">
+        <div class="card-icon">🔃</div>
+        <h3>Sorting</h3>
+        <p>Explore Bubble, Selection and Insertion Sort.</p>
+        <button onclick="comingSoon('Sorting')">Explore →</button>
+    </article>
+
+    <article class="card" data-name="trees">
+        <div class="card-icon">🌳</div>
+        <h3>Trees</h3>
+        <p>Learn nodes, root, branches and traversal.</p>
+        <button onclick="comingSoon('Trees')">Explore →</button>
+    </article>
+
+    <article class="card" data-name="graphs">
+        <div class="card-icon">🕸️</div>
+        <h3>Graphs</h3>
+        <p>Understand vertices, edges and traversal.</p>
+        <button onclick="comingSoon('Graphs')">Explore →</button>
+    </article>
+
+    <div class="empty" id="emptyMessage">
+        No topics found. Try another search! 💗
+    </div>
+
+</section>
+
+<footer>
+    Made with 💗 by Haari_Codes
+</footer>
+
+<script>
+function searchTopics() {
+    const input = document.getElementById("searchInput");
+    const query = input.value.toLowerCase().trim();
+    const cards = document.querySelectorAll(".card");
+    const empty = document.getElementById("emptyMessage");
+
+    let visible = 0;
+
+    cards.forEach(card => {
+        const name = card.dataset.name;
+
+        if (name.includes(query)) {
+            card.style.display = "flex";
+            visible++;
+        } else {
+            card.style.display = "none";
+        }
+    });
+
+    document.getElementById("topicCount").textContent =
+        visible + (visible === 1 ? " Topic" : " Topics");
+
+    empty.style.display = visible === 0 ? "block" : "none";
+}
+
+function comingSoon(topic) {
+    alert(topic + " Visualizer is coming soon! 💜");
+}
+</script>
+
+</body>
+</html>
