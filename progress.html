@@ -1,0 +1,375 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Progress | Haari_Codes</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #fff7f8;
+    color: #351039;
+}
+
+header {
+    background: linear-gradient(120deg, #f9dce9, #fdebf3);
+    padding: 24px 18px;
+    text-align: center;
+}
+
+.back {
+    display: block;
+    text-align: left;
+    color: #651477;
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+header h1 {
+    color: #651477;
+    font-size: 27px;
+}
+
+header p {
+    margin-top: 9px;
+    font-size: 13px;
+    color: #795d79;
+}
+
+.container {
+    padding: 18px 15px;
+}
+
+.welcome {
+    background: #f8e4ef;
+    padding: 20px;
+    border-radius: 18px;
+    margin-bottom: 20px;
+}
+
+.welcome h2 {
+    color: #651477;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.welcome p {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.section-title {
+    color: #651477;
+    font-size: 18px;
+    margin: 23px 0 13px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #fce8f1, #f7d9e8);
+    border: 1px solid #edc7db;
+    border-radius: 17px;
+    padding: 17px;
+}
+
+.stat-card span {
+    font-size: 25px;
+}
+
+.stat-card h3 {
+    color: #651477;
+    font-size: 23px;
+    margin: 9px 0 5px;
+}
+
+.stat-card p {
+    color: #795d79;
+    font-size: 12px;
+}
+
+.panel {
+    background: white;
+    border: 1px solid #edc7db;
+    border-radius: 17px;
+    padding: 18px;
+    margin-bottom: 15px;
+}
+
+.panel h3 {
+    color: #651477;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.course {
+    margin-bottom: 17px;
+}
+
+.course-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.bar {
+    width: 100%;
+    height: 9px;
+    background: #f4e5ed;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+    background: linear-gradient(90deg, #a34bb5, #651477);
+    border-radius: 20px;
+}
+
+.week {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    height: 115px;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+.day {
+    flex: 1;
+    text-align: center;
+    color: #795d79;
+    font-size: 11px;
+}
+
+.day-bar {
+    height: 75px;
+    display: flex;
+    align-items: end;
+    margin-bottom: 8px;
+}
+
+.day-bar span {
+    display: block;
+    width: 100%;
+    background: linear-gradient(#c47acb, #651477);
+    border-radius: 8px 8px 3px 3px;
+}
+
+.goal {
+    background: #f8e4ef;
+    padding: 18px;
+    border-radius: 17px;
+    margin-top: 20px;
+}
+
+.goal h3 {
+    color: #651477;
+    margin-bottom: 8px;
+}
+
+.goal p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #795d79;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 10px;
+    color: #927b91;
+    font-size: 13px;
+}
+
+@media(min-width:600px) {
+    .container {
+        max-width: 750px;
+        margin: auto;
+    }
+
+    .stats {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="index.html" class="back">← Back to Home</a>
+    <h1>📊 My Progress</h1>
+    <p>Track • Improve • Achieve ♡</p>
+</header>
+
+<main class="container">
+
+    <section class="welcome">
+        <h2>Your Learning Journey! 💜</h2>
+        <p>
+            Every small step counts. Keep learning,
+            practising and building your skills with Haari_Codes!
+        </p>
+    </section>
+
+    <h2 class="section-title">Overview</h2>
+
+    <section class="stats">
+
+        <div class="stat-card">
+            <span>📚</span>
+            <h3>12</h3>
+            <p>Lessons Completed</p>
+        </div>
+
+        <div class="stat-card">
+            <span>📝</span>
+            <h3>8</h3>
+            <p>Quizzes Attempted</p>
+        </div>
+
+        <div class="stat-card">
+            <span>⭐</span>
+            <h3>85%</h3>
+            <p>Average Score</p>
+        </div>
+
+        <div class="stat-card">
+            <span>🔥</span>
+            <h3>5 Days</h3>
+            <p>Learning Streak</p>
+        </div>
+
+    </section>
+
+    <h2 class="section-title">Course Progress</h2>
+
+    <section class="panel">
+
+        <div class="course">
+            <div class="course-info">
+                <span>C Programming</span>
+                <span>70%</span>
+            </div>
+            <div class="bar">
+                <div class="fill" style="width:70%"></div>
+            </div>
+        </div>
+
+        <div class="course">
+            <div class="course-info">
+                <span>C++ Programming</span>
+                <span>45%</span>
+            </div>
+            <div class="bar">
+                <div class="fill" style="width:45%"></div>
+            </div>
+        </div>
+
+        <div class="course">
+            <div class="course-info">
+                <span>HTML</span>
+                <span>80%</span>
+            </div>
+            <div class="bar">
+                <div class="fill" style="width:80%"></div>
+            </div>
+        </div>
+
+        <div class="course">
+            <div class="course-info">
+                <span>SQL</span>
+                <span>30%</span>
+            </div>
+            <div class="bar">
+                <div class="fill" style="width:30%"></div>
+            </div>
+        </div>
+
+        <div class="course">
+            <div class="course-info">
+                <span>Data Structures</span>
+                <span>20%</span>
+            </div>
+            <div class="bar">
+                <div class="fill" style="width:20%"></div>
+            </div>
+        </div>
+
+    </section>
+
+    <h2 class="section-title">Weekly Activity</h2>
+
+    <section class="panel">
+        <h3>Your Learning Time</h3>
+
+        <div class="week">
+
+            <div class="day">
+                <div class="day-bar"><span style="height:45%"></span></div>
+                Mon
+            </div>
+
+            <div class="day">
+                <div class="day-bar"><span style="height:75%"></span></div>
+                Tue
+            </div>
+
+            <div class="day">
+                <div class="day-bar"><span style="height:35%"></span></div>
+                Wed
+            </div>
+
+            <div class="day">
+                <div class="day-bar"><span style="height:90%"></span></div>
+                Thu
+            </div>
+
+            <div class="day">
+                <div class="day-bar"><span style="height:60%"></span></div>
+                Fri
+            </div>
+
+            <div class="day">
+                <div class="day-bar"><span style="height:25%"></span></div>
+                Sat
+            </div>
+
+            <div class="day">
+                <div class="day-bar"><span style="height:15%"></span></div>
+                Sun
+            </div>
+
+        </div>
+    </section>
+
+    <section class="goal">
+        <h3>🎯 Keep Going!</h3>
+        <p>
+            Set a small daily learning goal. Consistency
+            helps you become a better programmer.
+        </p>
+    </section>
+
+</main>
+
+<footer>
+    Made with 💗 by Haari_Codes
+</footer>
+
+</body>
+</html>
