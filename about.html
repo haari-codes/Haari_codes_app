@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us | Haari_Codes</title>
+
+<title>About Haari_Codes</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -20,8 +21,10 @@ body {
     color: #493B50;
 }
 
+/* HEADER */
+
 header {
-    padding: 20px 7%;
+    padding: 18px 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,22 +37,19 @@ header {
     color: #7952A0;
 }
 
-nav a {
+.home-link {
     text-decoration: none;
-    color: #493B50;
-    margin-left: 20px;
+    color: #7952A0;
+    font-weight: 600;
     font-size: 14px;
-    font-weight: 500;
 }
 
-nav a:hover {
-    color: #A16DBB;
-}
+/* HERO */
 
 .hero {
+    padding: 85px 20px;
     text-align: center;
-    padding: 75px 20px;
-    background: linear-gradient(135deg, #F9DCE2, #E9DDF8);
+    background: linear-gradient(135deg, #F8DDE4, #E9DDF8);
 }
 
 .hero h1 {
@@ -59,30 +59,51 @@ nav a:hover {
 }
 
 .hero p {
-    max-width: 600px;
+    max-width: 650px;
     margin: auto;
-    line-height: 1.8;
+    line-height: 1.9;
     font-size: 15px;
 }
 
+/* COMMON SECTION */
+
 section {
-    padding: 55px 8%;
+    padding: 60px 8%;
 }
 
-.section-title {
+.title {
     text-align: center;
     font-size: 29px;
     color: #7952A0;
     margin-bottom: 25px;
 }
 
-.about-text {
+.description {
     max-width: 750px;
-    text-align: center;
     margin: auto;
-    line-height: 1.9;
-    font-size: 15px;
+    text-align: center;
+    line-height: 2;
+    font-size: 14px;
 }
+
+/* STORY */
+
+.story-box {
+    background: white;
+    padding: 35px;
+    border-radius: 22px;
+    max-width: 850px;
+    margin: auto;
+    box-shadow: 0 5px 20px rgba(100,70,120,0.07);
+}
+
+.story-box p {
+    font-size: 14px;
+    line-height: 2;
+    text-align: center;
+}
+
+/* CARDS */
 
 .cards {
     display: grid;
@@ -96,7 +117,7 @@ section {
     padding: 30px 22px;
     border-radius: 20px;
     text-align: center;
-    box-shadow: 0 5px 20px rgba(100, 70, 120, 0.08);
+    box-shadow: 0 5px 20px rgba(100,70,120,0.07);
     transition: 0.3s;
 }
 
@@ -104,14 +125,14 @@ section {
     transform: translateY(-7px);
 }
 
-.card .emoji {
-    font-size: 35px;
+.icon {
+    font-size: 36px;
     margin-bottom: 15px;
 }
 
 .card h3 {
     color: #7952A0;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .card p {
@@ -119,75 +140,65 @@ section {
     line-height: 1.8;
 }
 
-.creator {
+/* HIGHLIGHT */
+
+.highlight {
     background: #F7E5EB;
-    border-radius: 25px;
-    padding: 35px;
     text-align: center;
-    max-width: 750px;
-    margin: auto;
 }
 
-.creator h2 {
+.highlight h2 {
     color: #7952A0;
+    font-size: 28px;
     margin-bottom: 15px;
 }
 
-.creator p {
+.highlight p {
     line-height: 1.9;
     font-size: 14px;
+    max-width: 650px;
+    margin: auto;
 }
 
-.contact {
-    text-align: center;
-    background: #EAE0F5;
-}
-
-.contact p {
-    margin: 12px 0 22px;
-}
-
-.btn {
-    display: inline-block;
-    background: #8761A9;
-    color: white;
-    padding: 12px 28px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #67467E;
-    transform: scale(1.04);
-}
+/* FOOTER */
 
 footer {
     background: #493B50;
     color: white;
     text-align: center;
-    padding: 22px;
+    padding: 25px;
     font-size: 12px;
 }
 
+/* MOBILE */
+
 @media(max-width:600px) {
     header {
-        flex-direction: column;
-        gap: 15px;
+        padding: 17px 5%;
     }
 
-    nav a {
-        margin: 0 8px;
-        font-size: 12px;
+    .logo {
+        font-size: 20px;
+    }
+
+    .hero {
+        padding: 65px 20px;
     }
 
     .hero h1 {
-        font-size: 32px;
+        font-size: 30px;
     }
 
     section {
-        padding: 40px 6%;
+        padding: 45px 6%;
+    }
+
+    .title {
+        font-size: 25px;
+    }
+
+    .story-box {
+        padding: 25px 18px;
     }
 }
 </style>
@@ -195,100 +206,152 @@ footer {
 
 <body>
 
+<!-- HEADER -->
+
 <header>
     <div class="logo">👩‍💻 Haari_Codes</div>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-    </nav>
+
+    <a href="index.html" class="home-link">
+        ← Home
+    </a>
 </header>
+
+<!-- HERO -->
 
 <div class="hero">
     <h1>About Haari_Codes 💜</h1>
-    <p>
-        Learn • Practice • Build
 
-        <br>
-        A space where curiosity meets creativity
-        and every idea gets a chance to grow.
+    <p>
+        A little idea with a big dream.
+        Exploring technology, sharing knowledge
+        and creating something meaningful.
     </p>
 </div>
 
-<section>
-    <h2 class="section-title">Our Story 🌷</h2>
-    <p class="about-text">
-        Haari_Codes is a learning and development space
-        created with a passion for technology and creativity.
-        Our goal is to make programming easier, learning
-        enjoyable, and building projects exciting.
-        We believe everyone can become a creator with
-        curiosity, consistency and practice.
-    </p>
-</section>
+<!-- OUR STORY -->
 
 <section>
-    <h2 class="section-title">What We Believe In</h2>
+    <h2 class="title">Our Story 🌷</h2>
+
+    <div class="story-box">
+        <p>
+            Haari_Codes is a personal initiative born
+            from a passion for programming, technology
+            and creativity.
+
+            <br><br>
+
+            What started as an interest in coding
+            grew into a space for learning, experimenting
+            and building creative digital projects.
+
+            <br><br>
+
+            Our goal is to make technology easier
+            to understand and encourage everyone
+            to turn their ideas into reality.
+        </p>
+    </div>
+</section>
+
+<!-- MISSION & VISION -->
+
+<section>
+    <h2 class="title">What Drives Us ✨</h2>
 
     <div class="cards">
 
         <div class="card">
-            <div class="emoji">📚</div>
-            <h3>Learn</h3>
+            <div class="icon">🎯</div>
+            <h3>Our Mission</h3>
             <p>
-                Understand programming concepts
-                through simple and structured lessons.
+                To make programming and technology
+                easier to learn through simple
+                explanations and practical experiences.
             </p>
         </div>
 
         <div class="card">
-            <div class="emoji">✍️</div>
-            <h3>Practice</h3>
+            <div class="icon">🔭</div>
+            <h3>Our Vision</h3>
             <p>
-                Improve your knowledge with quizzes,
-                exercises and hands-on practice.
+                To create a learning space where
+                curiosity grows, creativity develops
+                and ideas become real projects.
             </p>
         </div>
 
         <div class="card">
-            <div class="emoji">🚀</div>
-            <h3>Build</h3>
+            <div class="icon">💡</div>
+            <h3>Our Values</h3>
             <p>
-                Turn your ideas into real projects
-                and develop your coding skills.
+                Creativity, consistency, curiosity
+                and continuous learning are the
+                values behind everything we build.
             </p>
         </div>
 
     </div>
 </section>
+
+<!-- OUR APPROACH -->
 
 <section>
-    <div class="creator">
-        <h2>Meet the Creator 💗</h2>
-        <p>
-            Haari_Codes is a personal initiative
-            built with a dream of making technology
-            accessible and enjoyable for everyone.
-            It represents creativity, continuous learning
-            and the courage to turn ideas into reality.
-        </p>
-        <br>
-        <strong>One idea. Endless possibilities.</strong>
+    <h2 class="title">Our Approach 🚀</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">📚</div>
+            <h3>Learn</h3>
+            <p>
+                Understand concepts through
+                simple and structured lessons.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">✍️</div>
+            <h3>Practice</h3>
+            <p>
+                Test your knowledge through
+                quizzes and coding exercises.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">💻</div>
+            <h3>Build</h3>
+            <p>
+                Apply what you learn and
+                create your own projects.
+            </p>
+        </div>
+
     </div>
 </section>
 
-<section class="contact">
-    <h2 class="section-title">Let's Connect! 💌</h2>
-    <p>
-        Have an idea, suggestion or feedback?
-        We'd love to hear from you.
-    </p>
+<!-- CLOSING -->
 
-    <a class="btn"
-       href="https://github.com/haari-codes"
-       target="_blank">
-       Visit Our GitHub
-    </a>
+<section class="highlight">
+    <h2>Every Idea Starts Somewhere 💗</h2>
+
+    <p>
+        Haari_Codes is a journey of learning,
+        creating and growing.
+
+        <br><br>
+
+        We believe that every small step in learning
+        can lead to something extraordinary.
+
+        <br><br>
+
+        <strong>Learn • Practice • Build</strong>
+    </p>
 </section>
+
+<!-- FOOTER -->
 
 <footer>
     © 2026 Haari_Codes. All Rights Reserved.
