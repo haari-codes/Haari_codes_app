@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Haari_Codes</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #FFF8F2;
+    color: #493B50;
+}
+
+header {
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFF8F2;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 800;
+    color: #7952A0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #493B50;
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #A16DBB;
+}
+
+.hero {
+    text-align: center;
+    padding: 75px 20px;
+    background: linear-gradient(135deg, #F9DCE2, #E9DDF8);
+}
+
+.hero h1 {
+    font-size: 42px;
+    color: #67467E;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: auto;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+section {
+    padding: 55px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 29px;
+    color: #7952A0;
+    margin-bottom: 25px;
+}
+
+.about-text {
+    max-width: 750px;
+    text-align: center;
+    margin: auto;
+    line-height: 1.9;
+    font-size: 15px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.card {
+    background: white;
+    padding: 30px 22px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(100, 70, 120, 0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+}
+
+.card .emoji {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #7952A0;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.creator {
+    background: #F7E5EB;
+    border-radius: 25px;
+    padding: 35px;
+    text-align: center;
+    max-width: 750px;
+    margin: auto;
+}
+
+.creator h2 {
+    color: #7952A0;
+    margin-bottom: 15px;
+}
+
+.creator p {
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+.contact {
+    text-align: center;
+    background: #EAE0F5;
+}
+
+.contact p {
+    margin: 12px 0 22px;
+}
+
+.btn {
+    display: inline-block;
+    background: #8761A9;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #67467E;
+    transform: scale(1.04);
+}
+
+footer {
+    background: #493B50;
+    color: white;
+    text-align: center;
+    padding: 22px;
+    font-size: 12px;
+}
+
+@media(max-width:600px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0 8px;
+        font-size: 12px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    section {
+        padding: 40px 6%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">👩‍💻 Haari_Codes</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <h1>About Haari_Codes 💜</h1>
+    <p>
+        Learn • Practice • Build
+
+        <br>
+        A space where curiosity meets creativity
+        and every idea gets a chance to grow.
+    </p>
+</div>
+
+<section>
+    <h2 class="section-title">Our Story 🌷</h2>
+    <p class="about-text">
+        Haari_Codes is a learning and development space
+        created with a passion for technology and creativity.
+        Our goal is to make programming easier, learning
+        enjoyable, and building projects exciting.
+        We believe everyone can become a creator with
+        curiosity, consistency and practice.
+    </p>
+</section>
+
+<section>
+    <h2 class="section-title">What We Believe In</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="emoji">📚</div>
+            <h3>Learn</h3>
+            <p>
+                Understand programming concepts
+                through simple and structured lessons.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">✍️</div>
+            <h3>Practice</h3>
+            <p>
+                Improve your knowledge with quizzes,
+                exercises and hands-on practice.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🚀</div>
+            <h3>Build</h3>
+            <p>
+                Turn your ideas into real projects
+                and develop your coding skills.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <div class="creator">
+        <h2>Meet the Creator 💗</h2>
+        <p>
+            Haari_Codes is a personal initiative
+            built with a dream of making technology
+            accessible and enjoyable for everyone.
+            It represents creativity, continuous learning
+            and the courage to turn ideas into reality.
+        </p>
+        <br>
+        <strong>One idea. Endless possibilities.</strong>
+    </div>
+</section>
+
+<section class="contact">
+    <h2 class="section-title">Let's Connect! 💌</h2>
+    <p>
+        Have an idea, suggestion or feedback?
+        We'd love to hear from you.
+    </p>
+
+    <a class="btn"
+       href="https://github.com/haari-codes"
+       target="_blank">
+       Visit Our GitHub
+    </a>
+</section>
+
+<footer>
+    © 2026 Haari_Codes. All Rights Reserved.
+    <br><br>
+    Made with 💜 and creativity.
+</footer>
+
+</body>
+</html>
