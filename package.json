@@ -1,0 +1,11 @@
+{
+  "name": "haari-codes-ai",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "@google/genai": "^1.0.0"
+  }
+}
