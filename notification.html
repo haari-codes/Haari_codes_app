@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haari_Codes Notifications</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #FFF9F4;
+    color: #493B50;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 7%;
+    background: #FFF9F4;
+    border-bottom: 1px solid #F0E5EB;
+}
+
+.logo {
+    color: #7952A0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.notification-wrapper {
+    position: relative;
+}
+
+.notification-btn {
+    background: none;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    position: relative;
+    color: #7952A0;
+}
+
+.notification-count {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background: #D96B91;
+    color: white;
+    font-size: 10px;
+    padding: 3px 6px;
+    border-radius: 50%;
+}
+
+/* NOTIFICATION PANEL */
+
+.notification-panel {
+    display: none;
+    position: absolute;
+    top: 42px;
+    right: 0;
+    width: 300px;
+    background: #FFF9F4;
+    border: 1px solid #EADCEB;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(73,59,80,0.15);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.notification-panel.show {
+    display: block;
+}
+
+.notification-header {
+    padding: 15px;
+    background: #F5E8F3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.notification-header h3 {
+    font-size: 16px;
+    color: #7952A0;
+}
+
+.notification-header button,
+.notification-footer button {
+    border: none;
+    background: none;
+    color: #7952A0;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.notification-item {
+    padding: 14px;
+    border-bottom: 1px solid #F0E5EB;
+    cursor: pointer;
+}
+
+.notification-item.unread {
+    background: #FCEEF2;
+}
+
+.notification-item strong {
+    font-size: 13px;
+    color: #7952A0;
+}
+
+.notification-item p {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.notification-item small {
+    font-size: 10px;
+    color: #987E9E;
+}
+
+.notification-footer {
+    padding: 13px;
+    text-align: center;
+}
+
+.empty-notification {
+    padding: 25px 12px;
+    text-align: center;
+    font-size: 13px;
+    color: #7952A0;
+}
+
+/* DEMO CONTENT */
+
+main {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+main h1 {
+    color: #7952A0;
+    margin-bottom: 12px;
+}
+
+main p {
+    font-size: 14px;
+    line-height: 1.8;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">Haari_Codes</div>
+
+    <div class="notification-wrapper">
+
+        <button id="notificationBtn"
+                class="notification-btn"
+                aria-label="Notifications">
+            🔔
+            <span id="notificationCount"
+                  class="notification-count">0</span>
+        </button>
+
+        <div class="notification-panel"
+             id="notificationPanel">
+
+            <div class="notification-header">
+                <h3>Notifications</h3>
+
+                <button id="clearNotifications">
+                    Clear All
+                </button>
+            </div>
+
+            <div id="notificationList"></div>
+
+            <div class="notification-footer">
+                <button id="markRead">
+                    Mark all as read
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- PAGE CONTENT -->
+
+<main>
+    <h1>Welcome to Haari_Codes 💜</h1>
+    <p>
+        Learn • Practise • Build
+        <br>
+        Click the notification icon to see updates.
+    </p>
+</main>
+
+<script>
+
+// LOAD SAVED NOTIFICATIONS
+
+let notifications = JSON.parse(
+    localStorage.getItem("haariNotifications")
+) || [
+    {
+        id: 1,
+        title: "Welcome to Haari_Codes!",
+        message: "Start your learning journey with us.",
+        time: "New",
+        read: false
+    },
+    {
+        id: 2,
+        title: "Keep Learning!",
+        message: "Explore lessons and practise your coding skills.",
+        time: "New",
+        read: false
+    }
+];
+
+// ELEMENTS
+
+const btn = document.getElementById("notificationBtn");
+const panel = document.getElementById("notificationPanel");
+const list = document.getElementById("notificationList");
+const count = document.getElementById("notificationCount");
+
+// SAVE NOTIFICATIONS
+
+function saveNotifications() {
+    localStorage.setItem(
+        "haariNotifications",
+        JSON.stringify(notifications)
+    );
+}
+
+// DISPLAY NOTIFICATIONS
+
+function renderNotifications() {
+
+    list.innerHTML = "";
+
+    const unread = notifications.filter(
+        n => !n.read
+    ).length;
+
+    count.textContent = unread;
+    count.style.display = unread ? "block" : "none";
+
+    if (notifications.length === 0) {
+
+        list.innerHTML = `
+            <div class="empty-notification">
+                You're all caught up! 💜
+            </div>
+        `;
+
+        return;
+    }
+
+    notifications.forEach(n => {
+
+        const item = document.createElement("div");
+
+        item.className = "notification-item" +
+            (n.read ? "" : " unread");
+
+        const title = document.createElement("strong");
+        title.textContent = n.title;
+
+        const message = document.createElement("p");
+        message.textContent = n.message;
+
+        const time = document.createElement("small");
+        time.textContent = n.time;
+
+        item.append(title, message, time);
+
+        item.addEventListener("click", () => {
+
+            n.read = true;
+
+            saveNotifications();
+            renderNotifications();
+
+        });
+
+        list.appendChild(item);
+
+    });
+
+}
+
+// TOGGLE PANEL
+
+btn.addEventListener("click", () => {
+    panel.classList.toggle("show");
+});
+
+// CLOSE WHEN CLICKING OUTSIDE
+
+document.addEventListener("click", (e) => {
+
+    if (!e.target.closest(".notification-wrapper")) {
+        panel.classList.remove("show");
+    }
+
+});
+
+// MARK ALL AS READ
+
+document.getElementById("markRead")
+.addEventListener("click", () => {
+
+    notifications.forEach(n => {
+        n.read = true;
+    });
+
+    saveNotifications();
+    renderNotifications();
+
+});
+
+// CLEAR ALL
+
+document.getElementById("clearNotifications")
+.addEventListener("click", () => {
+
+    notifications = [];
+
+    saveNotifications();
+    renderNotifications();
+
+});
+
+// ADD NEW NOTIFICATION FUNCTION
+
+function addNotification(title, message) {
+
+    notifications.unshift({
+        id: Date.now(),
+        title: title,
+        message: message,
+        time: new Date().toLocaleString(),
+        read: false
+    });
+
+    saveNotifications();
+    renderNotifications();
+
+}
+
+// INITIAL DISPLAY
+
+saveNotifications();
+renderNotifications();
+
+</script>
+
+</body>
+</html>
