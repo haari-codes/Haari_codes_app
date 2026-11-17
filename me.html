@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Haari_Codes</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #FFF9F4;
+    color: #493B50;
+    line-height: 1.8;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background: #FFF9F4;
+    border-bottom: 1px solid #F1E4E8;
+}
+
+.logo {
+    color: #7952A0;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.home-link {
+    color: #7952A0;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.home-link:hover {
+    color: #B17BAE;
+}
+
+/* HERO */
+
+.hero {
+    text-align: center;
+    padding: 65px 20px 55px;
+    background: linear-gradient(135deg, #F9E5E7, #EEE5F5);
+}
+
+.brand-logo {
+    width: 95px;
+    height: 95px;
+    object-fit: contain;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    color: #67467E;
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+.tagline {
+    color: #9567A7;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-bottom: 17px;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: auto;
+    font-size: 14px;
+    color: #594B5D;
+}
+
+/* MAIN CONTENT */
+
+.container {
+    max-width: 950px;
+    margin: auto;
+    padding: 45px 22px;
+}
+
+.section {
+    background: white;
+    padding: 28px 30px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    border: 1px solid #F1E6EA;
+    box-shadow: 0 4px 15px rgba(90,60,100,0.04);
+}
+
+.section h2 {
+    color: #7952A0;
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.section p {
+    font-size: 14px;
+    color: #594B5D;
+}
+
+.story-highlight {
+    background: #F9EEF1;
+    padding: 17px;
+    border-left: 4px solid #C68EBA;
+    border-radius: 8px;
+    margin-top: 18px;
+    font-size: 13px;
+}
+
+.start-date {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #7952A0;
+    font-weight: 600;
+}
+
+/* LEARNING TOPICS */
+
+.topics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 13px;
+    margin-top: 20px;
+}
+
+.topic {
+    padding: 15px;
+    border-radius: 10px;
+    background: #F7EFF8;
+    color: #67467E;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid #EDE1F0;
+    transition: 0.2s;
+}
+
+.topic:hover {
+    background: #F4E1E9;
+    transform: translateY(-3px);
+}
+
+.small-note {
+    margin-top: 18px;
+    font-size: 13px !important;
+}
+
+/* CREATOR */
+
+.creator-info {
+    background: #F9EEF1;
+    padding: 22px;
+    border-radius: 12px;
+}
+
+.creator-info p {
+    margin-bottom: 9px;
+}
+
+.creator-info strong {
+    color: #7952A0;
+}
+
+/* CONTACT */
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.contact-links a {
+    text-decoration: none;
+    color: white;
+    background: #8461A1;
+    padding: 10px 23px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.contact-links a:hover {
+    background: #67467E;
+    transform: translateY(-2px);
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 22px;
+    background: #493B50;
+    color: white;
+    font-size: 12px;
+}
+
+@media(max-width:600px) {
+    header {
+        padding: 16px 5%;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .hero {
+        padding: 48px 20px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .container {
+        padding: 30px 15px;
+    }
+
+    .section {
+        padding: 22px 19px;
+    }
+
+    .section h2 {
+        font-size: 19px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+    <div class="logo">Haari_Codes</div>
+
+    <a href="index.html" class="home-link">
+        ← Home
+    </a>
+</header>
+
+<!-- HERO -->
+
+<div class="hero">
+
+    <!-- Replace with your actual logo image -->
+    <img src="logo.png"
+         alt="Haari_Codes Logo"
+         class="brand-logo"
+         onerror="this.style.display='none'">
+
+    <h1>About Haari_Codes</h1>
+
+    <div class="tagline">
+        Learn • Practise • Build
+    </div>
+
+    <p>
+        A learning project created to make programming
+        easier to understand, practise and explore,
+        one lesson at a time.
+    </p>
+
+</div>
+
+<main class="container">
+
+    <!-- OUR STORY -->
+
+    <section class="section">
+
+        <h2>🌱 Our Story</h2>
+
+        <p>
+            Haari_Codes started with a simple idea:
+            learning programming should feel less confusing
+            and more accessible to beginners.
+        </p>
+
+        <p style="margin-top:12px;">
+            This project brings lessons, examples and quizzes
+            together in one place so learners can study at
+            their own pace and practise what they learn.
+        </p>
+
+        <div class="start-date">
+            Started: [Add your actual starting date]
+        </div>
+
+        <div class="story-highlight">
+            <strong>Why we started:</strong>
+            To make coding concepts easier to learn and help
+            students build confidence through practice.
+        </div>
+
+    </section>
+
+    <!-- LEARNING TOPICS -->
+
+    <section class="section">
+
+        <h2>💻 What You Can Learn</h2>
+
+        <div class="topics">
+
+            <div class="topic">C Programming</div>
+
+            <div class="topic">C++ Programming</div>
+
+            <div class="topic">Data Structures</div>
+
+            <div class="topic">SQL</div>
+
+            <div class="topic">HTML and CSS</div>
+
+            <div class="topic">Quizzes and Coding Practice</div>
+
+        </div>
+
+        <p class="small-note">
+            Haari_Codes is designed especially for learners
+            who want to strengthen their basics and practise
+            step by step.
+        </p>
+
+    </section>
+
+    <!-- CREATOR -->
+
+    <section class="section">
+
+        <h2>👩‍💻 About the Creator</h2>
+
+        <div class="creator-info">
+
+            <p>
+                <strong>Name:</strong> Vismaya K.M.
+            </p>
+
+            <p>
+                <strong>Current studies:</strong>
+                B.Tech, Computer Science and Engineering,
+                2nd year
+            </p>
+
+            <p>
+                <strong>College:</strong>
+                Institute of Engineering and Technology,
+                University of Calicut
+            </p>
+
+        </div>
+
+        <p style="margin-top:18px;">
+            I am a student who enjoys learning computer science
+            and explaining concepts in a simple way.
+            I created Haari_Codes to bring learning resources
+            together and help other students practise programming.
+        </p>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section class="section">
+
+        <h2>📬 Contact & Connect</h2>
+
+        <p>
+            Have a question, suggestion or idea?
+            Connect with the creator through the links below.
+        </p>
+
+        <div class="contact-links">
+
+            <a href="https://github.com/haari-codes"
+               target="_blank">
+                GitHub
+            </a>
+
+            <a href="#"
+               target="_blank">
+                LinkedIn
+            </a>
+
+            <!-- Add your email address -->
+            <a href="#">
+                Email
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+    © 2026 Haari_Codes. All Rights Reserved.
+    <br><br>
+    Learn • Practise • Build
+</footer>
+
+</body>
+</html>
