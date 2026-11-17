@@ -1,11 +1,6 @@
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({
-    apiKey: process.env.GEMINI_API_KEY
-});
-
 export default async function handler(req, res) {
-
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
@@ -21,6 +16,12 @@ export default async function handler(req, res) {
     }
 
     try {
+        const apiKey = process.env.GEMINI_API_KEY;
+
+        if (!apiKey) {
+            throw new Error("GEMINI_API_KEY is missing in Vercel.");
+        }
+
         const { message } = req.body || {};
 
         if (!message || typeof message !== "string") {
@@ -29,12 +30,14 @@ export default async function handler(req, res) {
             });
         }
 
+        const ai = new GoogleGenAI({ apiKey });
+
         const response = await ai.models.generateContent({
             model: "gemini-3.8-flash",
             contents: message,
             config: {
                 systemInstruction:
-                    "You are Haari AI, a friendly multilingual learning companion. Reply in Malayalam, Manglish, English, Hindi or Tamil according to the user's language. Explain concepts clearly and help students learn."
+                    "You are Haari AI, a friendly multilingual learning companion. Reply in the user's language and explain concepts clearly."
             }
         });
 
@@ -46,7 +49,7 @@ export default async function handler(req, res) {
         console.error("Haari AI error:", error);
 
         return res.status(500).json({
-            error: "Haari AI is temporarily unavailable."
+            error: error.message || "Unknown server error"
         });
     }
 }
