@@ -1,1 +1,763 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haari AI | Haari_Codes</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #FFF9F4;
+    color: #493B50;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 17px 6%;
+    border-bottom: 1px solid #F0E5EB;
+}
+
+.logo {
+    color: #7952A0;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.back {
+    text-decoration: none;
+    color: #7952A0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 750px;
+    margin: auto;
+    padding: 25px 18px;
+}
+
+.hero {
+    text-align: center;
+    padding: 30px 10px;
+}
+
+.ai-logo {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background: #F1E5F5;
+    display: grid;
+    place-items: center;
+    font-size: 42px;
+    margin: auto auto 15px;
+}
+
+h1 {
+    color: #7952A0;
+    font-size: 27px;
+}
+
+.hero p {
+    color: #987E9E;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.modes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.mode {
+    background: white;
+    border: 1px solid #EADCEB;
+    border-radius: 15px;
+    padding: 20px 8px;
+    text-align: center;
+    cursor: pointer;
+    color: #7952A0;
+    transition: .2s;
+}
+
+.mode:hover {
+    background: #F5E8F3;
+    transform: translateY(-3px);
+}
+
+.mode span {
+    display: block;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.mode strong {
+    font-size: 13px;
+}
+
+.screen {
+    display: none;
+    background: white;
+    border: 1px solid #EADCEB;
+    border-radius: 16px;
+    padding: 18px;
+    margin-top: 15px;
+}
+
+.screen.active {
+    display: block;
+}
+
+.screen h2 {
+    color: #7952A0;
+    margin-bottom: 15px;
+    font-size: 19px;
+}
+
+.chat-box {
+    height: 310px;
+    overflow-y: auto;
+    background: #FFF9F4;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 12px;
+}
+
+.message {
+    max-width: 85%;
+    padding: 11px 13px;
+    border-radius: 12px;
+    margin: 9px 0;
+    font-size: 13px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.user {
+    background: #F1E5F5;
+    margin-left: auto;
+}
+
+.ai {
+    background: #FCEEF2;
+    margin-right: auto;
+}
+
+.chat-controls {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.chat-controls input {
+    min-width: 0;
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #EADCEB;
+    border-radius: 10px;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+.icon-btn {
+    background: #F5E8F3;
+    color: #7952A0;
+    border: none;
+    padding: 11px;
+    border-radius: 10px;
+    font-size: 17px;
+}
+
+.send-btn, .start-btn {
+    background: #7952A0;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+}
+
+.stop-btn {
+    background: #D96B91;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+}
+
+.center {
+    text-align: center;
+    padding: 20px 5px;
+}
+
+select {
+    padding: 11px;
+    border: 1px solid #EADCEB;
+    border-radius: 9px;
+    color: #7952A0;
+    background: white;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.status {
+    color: #987E9E;
+    font-size: 13px;
+    margin: 15px 0;
+}
+
+.record-icon {
+    font-size: 55px;
+    margin: 18px;
+}
+
+video {
+    width: 100%;
+    max-height: 280px;
+    background: #241D29;
+    border-radius: 12px;
+    margin: 12px 0;
+    object-fit: cover;
+}
+
+.small-note {
+    color: #987E9E;
+    font-size: 11px;
+    line-height: 1.5;
+    margin-top: 15px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #0007;
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-box {
+    width: 100%;
+    max-width: 350px;
+    background: #FFF9F4;
+    border-radius: 16px;
+    padding: 23px;
+    text-align: center;
+}
+
+.modal-box h3 {
+    color: #7952A0;
+    margin-bottom: 12px;
+}
+
+.modal-box p {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.modal-box button {
+    background: #7952A0;
+    color: white;
+    border: none;
+    padding: 11px 25px;
+    border-radius: 9px;
+    margin-top: 17px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px 10px;
+    color: #987E9E;
+    font-size: 11px;
+}
+
+@media(max-width:450px) {
+    .modes {
+        gap: 7px;
+    }
+
+    .mode {
+        padding: 17px 5px;
+    }
+
+    .chat-controls {
+        gap: 5px;
+    }
+
+    .icon-btn {
+        padding: 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Haari_Codes</div>
+    <a href="index.html" class="back">← Home</a>
+</header>
+
+<div class="container">
+
+    <section class="hero">
+        <div class="ai-logo">🤖</div>
+        <h1>Haari AI</h1>
+        <p>Your learning companion. Ask, explore and learn.</p>
+    </section>
+
+    <!-- MODE SELECTION -->
+
+    <div class="modes">
+        <button class="mode" onclick="openMode('textScreen')">
+            <span>💬</span>
+            <strong>Text Message</strong>
+        </button>
+
+        <button class="mode" onclick="openMode('voiceScreen')">
+            <span>🎙️</span>
+            <strong>Voice Message</strong>
+        </button>
+
+        <button class="mode" onclick="openMode('videoScreen')">
+            <span>📹</span>
+            <strong>Video Message</strong>
+        </button>
+    </div>
+
+    <!-- TEXT CHAT -->
+
+    <section class="screen" id="textScreen">
+        <h2>💬 Chat with Haari AI</h2>
+
+        <div class="chat-box" id="chatBox">
+            <div class="message ai">
+                Hello! 👋 Welcome to Haari AI.
+                How can I help you today?
+            </div>
+        </div>
+
+        <div class="chat-controls">
+            <label class="icon-btn" for="fileInput">＋</label>
+            <input type="file" id="fileInput" accept="image/*" hidden>
+
+            <input type="text" id="userInput"
+                   placeholder="Ask anything...">
+
+            <button class="icon-btn" onclick="startSpeech()"
+                    title="Voice input">🎙️</button>
+
+            <button class="icon-btn" onclick="sendMessage()"
+                    title="Send">➤</button>
+        </div>
+
+        <p class="small-note">
+            You can type a message, attach an image or use voice input.
+        </p>
+    </section>
+
+    <!-- VOICE -->
+
+    <section class="screen" id="voiceScreen">
+        <h2>🎙️ Voice Message</h2>
+
+        <div class="center">
+            <p>Select your language</p>
+
+            <select id="language">
+                <option value="en-IN">English</option>
+                <option value="ml-IN">Malayalam</option>
+                <option value="hi-IN">Hindi</option>
+                <option value="ta-IN">Tamil</option>
+            </select>
+
+            <div class="record-icon">🎙️</div>
+
+            <p class="status" id="voiceStatus">
+                Ready to start
+            </p>
+
+            <button class="start-btn" id="voiceStart"
+                    onclick="startVoice()">
+                Start
+            </button>
+
+            <button class="stop-btn hidden" id="voiceStop"
+                    onclick="stopVoice()">
+                Stop
+            </button>
+
+            <p class="small-note">
+                Allow microphone permission when your browser asks.
+            </p>
+        </div>
+
+        <audio id="audioPlayback" controls class="hidden"></audio>
+    </section>
+
+    <!-- VIDEO -->
+
+    <section class="screen" id="videoScreen">
+        <h2>📹 Video Message</h2>
+
+        <div class="center">
+
+            <video id="videoPreview" autoplay muted playsinline></video>
+
+            <p class="status" id="videoStatus">
+                Camera is not started
+            </p>
+
+            <button class="start-btn" id="videoStart"
+                    onclick="startVideo()">
+                Start
+            </button>
+
+            <button class="stop-btn hidden" id="videoStop"
+                    onclick="stopVideo()">
+                Stop
+            </button>
+
+            <p class="small-note">
+                Allow camera and microphone permission to start.
+            </p>
+
+            <video id="recordedVideo" controls class="hidden"></video>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    Haari_Codes © 2026 | Learn • Practise • Build
+</footer>
+
+<!-- SAFETY POPUP -->
+
+<div class="modal" id="safetyModal">
+    <div class="modal-box">
+        <h3>🛡️ Haari AI Safety Alert</h3>
+
+        <p id="safetyMessage">
+            Please communicate respectfully.
+            Inappropriate content is not allowed.
+        </p>
+
+        <button onclick="closeSafety()">I Understand</button>
+    </div>
+</div>
+
+<script>
+
+// MODE NAVIGATION
+
+function openMode(id) {
+    document.querySelectorAll(".screen").forEach(screen => {
+        screen.classList.remove("active");
+    });
+
+    document.getElementById(id).classList.add("active");
+}
+
+// SAFETY SYSTEM
+
+let warningCount = 0;
+let sessionBlocked = false;
+
+const blockedWords = [
+    "fuck",
+    "shit",
+    "bitch",
+    "asshole",
+    "porn",
+    "nude"
+];
+
+function checkSafety(text) {
+
+    if (sessionBlocked) return false;
+
+    const words = text.toLowerCase().match(/[a-z]+/g) || [];
+
+    const inappropriate = words.some(word =>
+        blockedWords.includes(word)
+    );
+
+    if (inappropriate) {
+        warningCount++;
+
+        if (warningCount >= 2) {
+            sessionBlocked = true;
+            stopVoice();
+            stopVideo();
+
+            document.getElementById("safetyMessage").textContent =
+                "Your session has been stopped because of repeated inappropriate content. Please use Haari AI respectfully.";
+
+        } else {
+            document.getElementById("safetyMessage").textContent =
+                "Please use respectful language. Inappropriate messages are not allowed. Repeated violations may end your session.";
+        }
+
+        document.getElementById("safetyModal").classList.add("show");
+        return false;
+    }
+
+    return true;
+}
+
+function closeSafety() {
+    document.getElementById("safetyModal").classList.remove("show");
+}
+
+// TEXT CHAT
+
+const input = document.getElementById("userInput");
+const chatBox = document.getElementById("chatBox");
+
+function addMessage(text, type) {
+    const div = document.createElement("div");
+    div.className = "message " + type;
+    div.textContent = text;
+    chatBox.appendChild(div);
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+function sendMessage() {
+
+    const text = input.value.trim();
+
+    if (!text || sessionBlocked) return;
+
+    if (!checkSafety(text)) return;
+
+    addMessage(text, "user");
+    input.value = "";
+
+    addMessage(
+        "Haari AI interface is ready! Connect an AI backend to receive real AI answers.",
+        "ai"
+    );
+}
+
+input.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") sendMessage();
+});
+
+// IMAGE ATTACHMENT
+
+document.getElementById("fileInput")
+.addEventListener("change", function() {
+
+    const file = this.files[0];
+
+    if (!file || sessionBlocked) return;
+
+    if (!file.type.startsWith("image/")) {
+        alert("Please select an image file.");
+        return;
+    }
+
+    addMessage("Image selected: " + file.name, "user");
+
+    addMessage(
+        "Image preview and AI image analysis need to be connected to a secure backend.",
+        "ai"
+    );
+
+    this.value = "";
+});
+
+// VOICE INPUT FOR TEXT CHAT
+
+function startSpeech() {
+
+    if (sessionBlocked) return;
+
+    const SpeechRecognition =
+        window.SpeechRecognition ||
+        window.webkitSpeechRecognition;
+
+    if (!SpeechRecognition) {
+        alert("Voice input is not supported in this browser.");
+        return;
+    }
+
+    const recognition = new SpeechRecognition();
+    recognition.lang = document.getElementById("language").value;
+    recognition.start();
+
+    recognition.onresult = function(event) {
+        const spoken = event.results[0][0].transcript;
+
+        if (checkSafety(spoken)) {
+            input.value = spoken;
+        }
+    };
+
+    recognition.onerror = function() {
+        alert("Voice recognition failed. Please try again.");
+    };
+}
+
+// VOICE RECORDING
+
+let audioStream = null;
+let audioRecorder = null;
+let audioChunks = [];
+
+async function startVoice() {
+
+    if (sessionBlocked) return;
+
+    try {
+        audioStream = await navigator.mediaDevices.getUserMedia({
+            audio: true
+        });
+
+        audioChunks = [];
+
+        audioRecorder = new MediaRecorder(audioStream);
+
+        audioRecorder.ondataavailable = function(e) {
+            if (e.data.size > 0) audioChunks.push(e.data);
+        };
+
+        audioRecorder.onstop = function() {
+            const blob = new Blob(audioChunks, {
+                type: audioRecorder.mimeType
+            });
+
+            const url = URL.createObjectURL(blob);
+
+            const player = document.getElementById("audioPlayback");
+            player.src = url;
+            player.classList.remove("hidden");
+
+            audioStream.getTracks().forEach(track => track.stop());
+        };
+
+        audioRecorder.start();
+
+        document.getElementById("voiceStart").classList.add("hidden");
+        document.getElementById("voiceStop").classList.remove("hidden");
+
+        document.getElementById("voiceStatus").textContent =
+            "🔴 Recording...";
+
+    } catch(error) {
+        alert("Microphone permission is required.");
+    }
+}
+
+function stopVoice() {
+
+    if (audioRecorder && audioRecorder.state === "recording") {
+        audioRecorder.stop();
+    }
+
+    document.getElementById("voiceStart").classList.remove("hidden");
+    document.getElementById("voiceStop").classList.add("hidden");
+
+    document.getElementById("voiceStatus").textContent =
+        "Recording stopped";
+}
+
+// VIDEO RECORDING
+
+let videoStream = null;
+let videoRecorder = null;
+let videoChunks = [];
+
+async function startVideo() {
+
+    if (sessionBlocked) return;
+
+    try {
+
+        videoStream = await navigator.mediaDevices.getUserMedia({
+            video: true,
+            audio: true
+        });
+
+        const preview = document.getElementById("videoPreview");
+        preview.srcObject = videoStream;
+        preview.classList.remove("hidden");
+
+        videoChunks = [];
+
+        videoRecorder = new MediaRecorder(videoStream);
+
+        videoRecorder.ondataavailable = function(e) {
+            if (e.data.size > 0) videoChunks.push(e.data);
+        };
+
+        videoRecorder.onstop = function() {
+
+            const blob = new Blob(videoChunks, {
+                type: videoRecorder.mimeType
+            });
+
+            const url = URL.createObjectURL(blob);
+
+            const recorded = document.getElementById("recordedVideo");
+            recorded.src = url;
+            recorded.classList.remove("hidden");
+
+            videoStream.getTracks().forEach(track => track.stop());
+            preview.srcObject = null;
+        };
+
+        videoRecorder.start();
+
+        document.getElementById("videoStart").classList.add("hidden");
+        document.getElementById("videoStop").classList.remove("hidden");
+
+        document.getElementById("videoStatus").textContent =
+            "🔴 Video recording started";
+
+    } catch(error) {
+        alert("Camera and microphone permission are required.");
+    }
+}
+
+function stopVideo() {
+
+    if (videoRecorder && videoRecorder.state === "recording") {
+        videoRecorder.stop(); 
+    }
+
+    document.getElementById("videoStart").classList.remove("hidden");
+    document.getElementById("videoStop").classList.add("hidden");
+
+    document.getElementById("videoStatus").textContent =
+        "Video recording stopped";
+}
+
+</script>
+
+</body>
+</html>
