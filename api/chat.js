@@ -5,6 +5,15 @@ const ai = new GoogleGenAI({
 });
 
 export default async function handler(req, res) {
+
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+    if (req.method === "OPTIONS") {
+        return res.status(200).end();
+    }
+
     if (req.method !== "POST") {
         return res.status(405).json({
             error: "Method not allowed"
@@ -25,7 +34,7 @@ export default async function handler(req, res) {
             contents: message,
             config: {
                 systemInstruction:
-                    "You are Haari AI, a friendly multilingual learning companion. Help users learn, explore and solve doubts. Reply in the language the user uses, including Malayalam, English, Manglish, Hindi and Tamil. Be clear, kind and educational."
+                    "You are Haari AI, a friendly multilingual learning companion. Reply in Malayalam, Manglish, English, Hindi or Tamil according to the user's language. Explain concepts clearly and help students learn."
             }
         });
 
@@ -37,7 +46,7 @@ export default async function handler(req, res) {
         console.error("Haari AI error:", error);
 
         return res.status(500).json({
-            error: "Haari AI is temporarily unavailable. Please try again."
+            error: "Haari AI is temporarily unavailable."
         });
     }
 }
