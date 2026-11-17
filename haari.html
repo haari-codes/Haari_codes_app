@@ -622,14 +622,7 @@ async function sendMessage() {
 
     try {
         const response = await fetch(
-            "https://YOUR-VERCEL-DOMAIN.vercel.app/api/chat",
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ message: text })
-            }
+    "https://haaricodes-hhnl3u98b-haaricse3-2004.vercel.app/api/chat",
         );
 
         const data = await response.json();
